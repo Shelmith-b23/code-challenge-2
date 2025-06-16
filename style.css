@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: beige;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 40px;
+    background-color: white;
+
+    border-radius: 10px;
+}
+
+form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input, select, button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.category{
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: medium;
+    margin-left: 10px;
+    color: white;
+}
+
+.friend {background-color: aquamarine;}
+.family {background-color: burlywood;}
+.colleague {background-color: cadetblue;}
+
+button.edit, button.delete, button.toggle{
+    margin: 8px;
+    font-size: medium;
+}
