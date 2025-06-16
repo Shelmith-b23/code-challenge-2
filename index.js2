@@ -1,0 +1,36 @@
+const guestForm = document.getElementById("guestForm");
+const guestNameInput = document.getElementById("guestName");
+const guestList = document.getElementById("guestList");
+
+guestForm.addEventListener('submit', function(event){
+    event.preventDefault();
+
+    const name = guestNameInput.value.trim();
+    if(name === '') return;
+
+    const li = document.createElement('li');
+    li.textContent = name;
+
+    //RSVP
+    const rsvpBtn = document.createElement('button');
+    rsvpBtn.textContent = 'RSVP: NO';
+    rsvpBtn.className = 'rsvp';
+    rsvpBtn.addEventListener('click', () => {
+        rsvpBtn.textContent = rsvpBtn.textContent === 'RSVP: Yes' ? 'RSVP: No': 'RSVP: Yes' 
+    });
+
+    // delete button
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = 'remove';
+    deleteBtn.addEventListener('click', () => {
+    guestList.removeChild(li);
+    });
+
+    li.appendChild(rsvpBtn);
+    li.appendChild(deleteBtn);
+    guestList.appendChild(li);
+
+
+    guestNameInput.value = '';
+
+});
